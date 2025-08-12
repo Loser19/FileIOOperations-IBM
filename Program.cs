@@ -1,12 +1,28 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using FileIOOperationsIBM;
 
-Console.WriteLine("                         ATTENTION!! Everything you see here is done by CO_PILOT");
+Console.WriteLine("                                 ATTENTION!! Everything you see here is done by CO_PILOT");
 Console.WriteLine();
 Console.WriteLine();
 
-FileClassDemo(filePath);
+//string? filePath = "movies.txt";
+//FileClassDemo(filePath);
 
+//string? filePath = "superhero.txt";
+//StreamClassDemo(filePath);
+static void StreamClassDemo(string filepath)
+{
+    Superhero superhero = new Superhero();
+    Console.Write("Enter the superhero name: ");
+    superhero.Name = Console.ReadLine();
+    Console.Write("Enter the superhero power: ");
+    superhero.Power = Console.ReadLine();
+    Console.Write("Enter the superhero age: ");
+    superhero.Age = Console.ReadLine();
+    superhero.addSuperhero(superhero, filepath);
+    superhero.readSuperhero(filepath);
+
+}
 static void FileClassDemo(string filePath)
 {
     while (true)
