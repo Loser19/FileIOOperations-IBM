@@ -4,7 +4,6 @@ using FileIOOperationsIBM;
 Console.WriteLine("                         ATTENTION!! Everything you see here is done by CO_PILOT");
 Console.WriteLine();
 Console.WriteLine();
-string? filePath = "movies.txt";
 
 FileClassDemo(filePath);
 
