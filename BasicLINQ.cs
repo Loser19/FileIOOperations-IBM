@@ -48,6 +48,7 @@ namespace FileIOOperationsIBM
             Console.WriteLine();
             Console.WriteLine();
         }
+        public void LinqFirstorFirstDeafault()
         public void GroupByLinq()
         {
             Console.WriteLine("Using GroupBy in LINQ: ");

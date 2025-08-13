@@ -80,7 +80,6 @@ static void StreamClassDemo(string filepath)
     superhero.Age = Console.ReadLine();
     superhero.addSuperhero(superhero, filepath);
     superhero.readSuperhero(filepath);
-
 }
 static void FileClassDemo(string filePath)
 {
