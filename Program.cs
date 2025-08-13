@@ -14,11 +14,62 @@ Console.WriteLine();
 //string? filePath = "product.txt";
 //StreamProductDemo(filePath);
 
-BasicLINQDemo();
+//BasicLINQDemo();
+//ProductLINQDemo();
+//JSONSerializerDemo();
+//SynchronousGetnumbers();
+//AsyncGetNumbers();
+static void SynchronousGetnumbers()
+{
+    Console.WriteLine($"Start: {DateTime.Now.ToLongTimeString()}");
+    var numbers = AsynStreamDemo.GetNumbers(1, 10);
+    foreach (var number in numbers)
+    {
+        Console.WriteLine($"Number: {number}");
+    }
+    Console.WriteLine($"End: {DateTime.Now.ToLongTimeString()}");
+}
+static async void AsyncGetNumbers()
+{
+    //AsynchronousStreamsDemos asynchronousStreamsDemos = new AsynchronousStreamsDemos();
+    Console.WriteLine($"Start: {DateTime.Now.ToLongTimeString()}");
+    var numbersAsync = AsynStreamDemo.GetNumbersAsync(1, 11);
+    await foreach (var number in numbersAsync)
+    {
+        Console.WriteLine(number);
+    }
+    Console.WriteLine($"End: {DateTime.Now.ToLongTimeString()}");
+}
+static void JSONSerializerDemo()
+{
+    Superhero obj = new Superhero();
+    //obj.Name = "Superman";
+    //obj.Power = "Strength";
+    //obj.Age = "30";
+    //obj.JsonSerializeSuperhero(obj);
+    obj.JsonSerializeSuperhero(new Superhero() { Name = "Batman", Power = "Money", Age = "27" });
+}
+static void ProductLINQDemo()
+{
+    ProdLINQ productLINQ = new ProdLINQ();
+    productLINQ.BasicLinq();
+    productLINQ.WhereLinq();
+    productLINQ.TakeLinq();
+    productLINQ.TakeWhileLinq();
+    productLINQ.LinqFirstorFirstDeafault();
+    productLINQ.LinqSingleorSingleDeafult();
+    productLINQ.GroupByLinq();
+    productLINQ.GroupByIntoLinq();
+    productLINQ.OrderByLinq();
+    productLINQ.OrderByThenByLinq();
+
+}
 static void BasicLINQDemo()
 {
     BasicLINQ basicLINQ = new BasicLINQ();
     basicLINQ.TakeLinq();
+    basicLINQ.LinqFirstorFirstDeafault();
+    basicLINQ.LinqSingleorSingleDeafult();
     basicLINQ.GroupByLinq();
     basicLINQ.GroupByIntoLinq();
     basicLINQ.OrderByThenByLinq();
@@ -70,7 +121,7 @@ static void StreamProductDemo(string filePath)
     }
 }
 static void StreamClassDemo(string filepath)
-{
+{ 
     Superhero superhero = new Superhero();
     Console.Write("Enter the superhero name: ");
     superhero.Name = Console.ReadLine();

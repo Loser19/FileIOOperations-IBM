@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace FileIOOperationsIBM
 {
@@ -21,6 +22,14 @@ namespace FileIOOperationsIBM
         public void DisplayInfo()
         {
             Console.WriteLine($"Name: {Name}, Power: {Power}, Age: {Age}");
+        }
+
+        public void JsonSerializeSuperhero(Superhero sp)
+        {
+            string jsonString = JsonSerializer.Serialize(sp);
+            Console.WriteLine($"Serialize Superhero: {jsonString}");
+            Superhero sph = JsonSerializer.Deserialize<Superhero>(jsonString);
+            Console.WriteLine($"Deserialize Superhero: Name: {sph.Name}, Power: {sph.Power}, Age: {sph.Age}");
         }
 
         // write a method to  write Superhero details to a  file using stream writer.

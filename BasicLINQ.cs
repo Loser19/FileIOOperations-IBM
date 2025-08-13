@@ -49,6 +49,31 @@ namespace FileIOOperationsIBM
             Console.WriteLine();
         }
         public void LinqFirstorFirstDeafault()
+        {
+            Console.WriteLine("Using First and FirstOrDefault in LINQ: ");
+            var firstTrainee = sp.First();
+            Console.WriteLine($"First Trainee: Name: {firstTrainee.Name}, Power: {firstTrainee.Power}, Age: {firstTrainee.Age}");
+            var firstOrDefaultTrainee = sp.FirstOrDefault(t => t.Name == "Superman");
+            if (firstOrDefaultTrainee == null)
+            {
+                Console.WriteLine("No trainee found with the specified condition.");
+            }
+            else
+            {
+                Console.WriteLine($"First Or Default Trainee: Name: {firstOrDefaultTrainee.Name}, Power: {firstOrDefaultTrainee.Power}, Age: {firstOrDefaultTrainee.Age}");
+            }
+            Console.WriteLine();
+        }
+
+        public void LinqSingleorSingleDeafult()
+        {
+            Console.WriteLine("Using Single in LINQ: ");
+            var singleTrainee = sp.Single(t => t.Name == "Batman");
+            Console.WriteLine(singleTrainee.Power);
+            //Console.WriteLine("Using SingleOrDefault in LINQ: ");
+            //var singleordefaultTrainee = sp.Single(t => t.Name == "Spiderman");
+            //Console.WriteLine(singleordefaultTrainee.Power);
+        }
         public void GroupByLinq()
         {
             Console.WriteLine("Using GroupBy in LINQ: ");
